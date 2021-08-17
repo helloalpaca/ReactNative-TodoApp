@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {Fragment} from 'react';
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -60,12 +60,11 @@ const App: () => Node = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    /* <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -83,9 +82,16 @@ const App: () => Node = () => {
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <LearnMoreLinks />
+          <LearnMoreLinks /> 
         </View>
       </ScrollView>
+    </SafeAreaView>*/
+    <SafeAreaView>
+      <Fragment>
+        <View>
+          <Text>Hello, World!</Text>
+        </View>
+      </Fragment>
     </SafeAreaView>
   );
 };
