@@ -26,6 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import Styled from 'styled-components/native';
+
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -89,7 +91,8 @@ const App: () => Node = () => {
     <SafeAreaView>
       <Fragment>
         <View>
-          <Text>Hello, World!</Text>
+          <Text style={styles.textHelloworld}>Hello, World!</Text>
+          <TextHelloWorldStyled>Hello World, Styled!</TextHelloWorldStyled>
         </View>
       </Fragment>
     </SafeAreaView>
@@ -113,6 +116,15 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  textHelloworld: {
+    fontSize: 36,
+    color: Colors.dark,
+  },
 });
+
+const TextHelloWorldStyled = Styled.Text`
+  font-size: 36;
+  color: ${Colors.dark};
+`;
 
 export default App;
