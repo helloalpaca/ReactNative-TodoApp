@@ -5189,7 +5189,7 @@ prompts@^2.0.1, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.7.2:
+prop-types@^15.5.7, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5247,6 +5247,18 @@ react-native-codegen@^0.0.6:
     flow-parser "^0.121.0"
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
+
+react-native-typewriter@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-typewriter/-/react-native-typewriter-0.7.0.tgz#b370794f45366a9e9a47bdd40666198ebdce3bf2"
+  integrity sha512-lwlo8TemtZHgYH/EctYaCT5xMkgIk9ZQVyFm7qaY5b3MxveOd1v5g58oHNAkC9+vRJfdef+3dZoTJ9bM/+75/w==
+  dependencies:
+    prop-types "^15.5.7"
+
+react-native-typing-animation@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/react-native-typing-animation/-/react-native-typing-animation-0.1.7.tgz#8f2cf08d9400ae543a110292eb7d71523dda5528"
+  integrity sha512-4H3rF9M+I2yAZpYJcY0Mb29TXkn98QK12rrKSY6LZj1BQD9NNmRZuNXzwX4XHapsIz+N/J8M3p27FOQPbfzqeg==
 
 react-native@0.64.2:
   version "0.64.2"

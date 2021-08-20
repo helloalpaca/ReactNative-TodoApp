@@ -6,8 +6,9 @@
  * @flow strict-local
  */
 
-import React, {Fragment} from 'react';
+import React, {Fragment, useRef, useEffect } from 'react';
 import type {Node} from 'react';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -16,6 +17,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Animated,
 } from 'react-native';
 
 import {
@@ -27,6 +29,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import Styled from 'styled-components/native';
+import TypeWriter from 'react-native-typewriter';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -92,7 +95,8 @@ const App: () => Node = () => {
       <Fragment>
         <View>
           <Text style={styles.textHelloworld}>Hello, World!</Text>
-          <TextHelloWorldStyled>Hello World, Styled!</TextHelloWorldStyled>
+          <TextHelloWorldStyled>Hello World, Styled!</TextHelloWorldStyled>      
+          <TypeWriter typing={1}>Hello World! My Name is Blahblahblah</TypeWriter>
         </View>
       </Fragment>
     </SafeAreaView>
