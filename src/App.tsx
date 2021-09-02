@@ -1,5 +1,12 @@
  import React, {Fragment, useRef, useEffect } from 'react';
+ import {NavigationContainer} from '@react-navigation/native';
+ import {createStackNavigator} from '@react-navigation/stack';
  import Styled from 'styled-components/native';
+
+ import Login from './Login';
+ import SignUp from './SignUp';
+ import Main from './Main';
+ 
  
  import {
    SafeAreaView,
@@ -24,6 +31,8 @@
  } from 'react-native/Libraries/NewAppScreen';
 
  interface Props {}
+
+ const Stack = createStackNavigator();
  
  const App = ({}: Props) => {
    const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
@@ -39,17 +48,13 @@
    };
  
    return (
-     <SafeAreaView>
-       <Fragment>
-         <View>
-           {/* <Button title="TITLE" onPress = {() => Alert.alert("Button Clicked!")} /> */}
-           <TextHelloWorldStyled>Hello World, Styled!</TextHelloWorldStyled>     
-           <Pressable style={styles.buttonStyle} onPress={()=> Alert.alert("Button Clicked!")}>
-            <Text style={styles.textHelloworld}>Hello!</Text>
-          </Pressable>
-         </View>
-       </Fragment>
-     </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Main' component={Main}/>
+        <Stack.Screen name='Login' component={Login}/>
+        <Stack.Screen name='SignUp' component={SignUp}/>
+      </Stack.Navigator>
+    </NavigationContainer>
    );
  };
  
@@ -71,6 +76,68 @@
    font-size: 36;
    color: ${Colors.dark};
  `;
+
+ const TextTitleLines = Styled.Text`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 24px;
  
+  height: 72px;
+  left: 0px;
+  right: 0px;
+  top: 128px;
+ `;
+
+ const ImgMain = Styled.Image`
+  width: 152px;
+  height: 152px;
+  left: 112px;
+  top: 238px;
+ `;
+
+ const TextBOXN = Styled.Text`
+width: 194px;
+height: 84px;
+left: 92px;
+top: 378px;
+
+font-family: Noto Sans KR;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 70px;
+text-align: center;
+
+color: #000000;
+ `;
+
+ const ButtonKakaoStart = Styled.TouchableOpacity`
+ align-items: center;
+ padding: 12px 24px;
+ 
+ background: #000000;
+ border-radius: 8px;
+ `;
+
+ const ButtonText = Styled.Text`
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 18px;
+color: #FFFFFF;
+ `;
+
+ const TextAsk = Styled.Text`
+ font-style: normal;
+ font-weight: 500;
+ font-size: 14px;
+ line-height: 21px;
+ `;
+ 
+ const ButtonAsk = Styled.TouchableOpacity`
+ 
+ `;
+
  export default App;
  
