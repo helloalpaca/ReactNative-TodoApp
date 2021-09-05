@@ -1,30 +1,23 @@
- import React, {Fragment, useRef, useEffect } from 'react';
- import {NavigationContainer} from '@react-navigation/native';
- import {createStackNavigator} from '@react-navigation/stack';
+import React, {Fragment} from 'react';
+import Styled from 'styled-components/native';
 
- import KakaoLogin from './Screens/KaKaoLogin';
- import SignUp from './Screens/SignUp';
- import Main from './Screens/Main';
+import Todo from '~/Screens/Todo';
 
- interface Props {
-   navigation: any;
- }
+import { TodoListContextProvider } from '~/Context/TodoListContext';
 
- const Stack = createStackNavigator();
- 
- const App = ({}: Props) => {
-   const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
+const Container = Styled.View`
+  flex: 1;
+  background-color: #EEE;
+`;
 
-   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Main' component={Main} />
-        <Stack.Screen name='KakaoLogin' component={KakaoLogin}/>
-        <Stack.Screen name='SignUp' component={SignUp}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-   );
- };
- 
- export default App;
- 
+const App = () => {
+  return(
+    <TodoListContextProvider>
+      <Container>
+        <Todo />
+      </Container>
+    </TodoListContextProvider>
+  );
+};
+
+export default App;
